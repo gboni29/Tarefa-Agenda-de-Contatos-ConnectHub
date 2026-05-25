@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>ConnectHub</title>
+
+  <style>
+    body { font-family: sans-serif; max-width: 480px; margin: 2rem auto; }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    input, select, button {
+      padding: 0.6rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    #erro {
+      color: red;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    #lista { list-style: none; padding: 0; }
+
+    #lista li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .info { display: flex; flex-direction: column; }
+
+    .categoria { font-size: 0.75rem; color: #888; }
+
+    .acoes {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .estrela {
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+
+    .estrela.favoritado { color: gold; }
+
+    .estrela.favoritado::before { content: "★"; }
+
+    .estrela:not(.favoritado) { color: #ccc; }
+
+    .estrela:not(.favoritado)::before { content: "☆"; }
+
+    .remover {
+      cursor: pointer;
+      background: #eee;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>📋 ConnectHub</h1>
+
+  <form id="formulario">
+    <input id="nome" type="text" placeholder="Nome" />
+    <input id="telefone" type="text" placeholder="Telefone" />
+    <input id="email" type="email" placeholder="Email opcional" />
+
+    <select id="categoria">
+      <option value="amigo">Amigo</option>
+      <option value="trabalho">Trabalho</option>
+      <option value="familia">Família</option>
+      <option value="outro">Outro</option>
+    </select>
+
+    <button type="submit">Adicionar contato</button>
+  </form>
+
+  <p id="erro"></p>
+
+  <ul id="lista"></ul>
+
+  <script src="contatos.js"></script>
+</body>
+</html>
